@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</head>
 <html>
 <body>
 
@@ -97,14 +107,22 @@ for($i = 0; $i < count($fights); $i++){
 
 ?>
 <h2 align='center'>Savaş/Turnuva Geçmişi</h2>
-<form align='center' action="history.php" method="post">
-    <p>Turnuva Seçiniz:</p>
-    <?php
-    foreach ($tournamentsIDS as $id){
-        print '<input type="radio" name="tRadio" value="'.$id.'" />'.$id.'';
-    }
-    ?>
-    <p><input type="submit" /></p>
+<form class='was-validated' align='center' action="history.php" method="get">
+    <div class="form-floating">
+        <select class="form-select" required aria-label="Default select example" name="t_id">
+            <option value="">Select</option>
+            <?php
+            foreach ($tournamentsIDS as $id){
+                print '<option value="'.$id.'">'.$id.'</option>';
+            }
+            ?>
+        </select>
+        <label for="floatingSelect">Select a Tournament</label>
+    </div>
+    <br>
+    <div class="row-auto">
+        <button type="submit" class="btn btn-primary mb-3">Show</button>
+    </div>
 </form>
 
 

@@ -1,4 +1,14 @@
 <html>
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</head>
 <body>
 <?php
 
@@ -24,19 +34,21 @@ try{
 }
 
 $fights = getFightsFromDB($db, (int)$t_id);
-$i = 1;
+$i = 0;
 ?>
 <table align="center" border= "1px solid black">
     <tr>
+        <td align="center"><b>Fight Round</b></td>
         <td align='center'><b>X Char</b></td>
         <td align='center'><b>Y Char</b></td>
         <td align='center'><b>Winner Char</b></td>
-        <td align="center">Choose</td>
     </tr>
     <?php
     foreach ($fights as $fight){
+        $arr = fightNo_toRound($i);
+        $i++;
         print "<tr align='center'>";
-        print '<td align="center">'.$i++.'</td>';
+        print '<td align="center">'.'Round-'.$arr[0]." ".$arr[1].'. Fight</td>';
         print '<td align="center">'.getCharInDB_withID($db,$fight->xfighter_id)->hero_name.'</td>';
         print '<td align="center">'.getCharInDB_withID($db,$fight->yfighter_id)->hero_name.'</td>';
         print '<td align="center"><b>'.getCharInDB_withID($db,$fight->winner_id)->hero_name.'</b></td>';
