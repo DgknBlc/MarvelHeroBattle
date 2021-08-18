@@ -15,19 +15,26 @@
            margin-right: auto;
         }
 
+        body{
+            background-image: url("https://images3.alphacoders.com/100/1003231.jpg");
+            background-size: cover;
+        }
+
     </style>
     <title>Marvel Hero Battle</title>
 
 </head>
 <body>
 
-
-</>
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1" style="margin: 0 auto 0 auto">Marvel Hero Battle</span>
+        <a class="navbar-brand" href="index.php" style="margin: 0 auto 0 auto">
+            <img src="http://assets.stickpng.com/images/585f9333cb11b227491c3581.png" alt="" width="85px" class="d-inline-block align-text-top">
+            Marvel Hero Battle
+        </a>
     </div>
 </nav>
+
 
 <?php
 include "marvelfunction.php";
@@ -108,5 +115,6 @@ foreach (getTournamentsFromDB($db) as $item){
     </div>
 </form>
 
+</body>
 
 </html>
