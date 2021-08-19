@@ -4,6 +4,6 @@ Savaşı kazanıp, kazanmayacakları karakterlerin çizgiroman, hikaye, olay ve 
 
 DB isimli dosyada projenin veritabanının backup'ı bulunmakta. Bunu PostgreSQL ile restore edebilirsiniz.
 
-Projeyi çalıştırmak için xampp gibi web sunucu yazılımına ihtiyacınız olabilir.
+Projeyi çalıştırmak için xampp gibi web sunucu yazılımına ihtiyacınız olabilir. Örnek resimler Screenshotta var.
 
 Not: Turnuva sayfasının açılma hızı çok sayıda istek atılmasından mütevellit internet bağlantısına göre değişibilir.
